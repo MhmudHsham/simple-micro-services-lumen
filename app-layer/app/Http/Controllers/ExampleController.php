@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\ServicesLayer\DataAccessLayer;
+
 class ExampleController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+
+
+    public function index()
     {
-        //
+        $response = DataAccessLayer::connect('GET', 'http://localhost/simple-micro-services-lumen/services-layer/events-service/test');
+        return $response;
     }
 
-    //
 }

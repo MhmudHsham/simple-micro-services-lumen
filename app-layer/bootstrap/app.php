@@ -23,6 +23,8 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
+$app->configure("endpoints");
+
 // $app->withFacades();
 
 // $app->withEloquent();

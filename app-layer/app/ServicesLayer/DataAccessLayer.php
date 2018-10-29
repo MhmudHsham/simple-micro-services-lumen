@@ -16,7 +16,7 @@ class DataAccessLayer
     {
         $client = new \GuzzleHttp\Client();
         $res = $client->request($method, $url);
-        return json_decode($res->getBody()->getContents());
+        return $res->getBody()->getContents();
     }
 
 }

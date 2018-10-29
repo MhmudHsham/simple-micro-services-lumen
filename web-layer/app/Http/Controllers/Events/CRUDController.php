@@ -15,7 +15,7 @@ class CRUDController extends Controller
      */
     public function index()
     {
-        $result = AppLayerConnection::connect("GET", "http://localhost/simple-micro-services-lumen/services-layer/events-service/test");
+        $result = AppLayerConnection::connect("GET", "http://localhost/simple-micro-services-lumen/app-layer/test");
         return $result;
     }
 

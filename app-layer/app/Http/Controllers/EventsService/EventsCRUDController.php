@@ -16,8 +16,7 @@ class EventsCRUDController extends Controller
 
     public function index()
     {
-        $end_point = config("endpoints.EVENTS_KEY_CONNECTION");
-        $response = DataAccessLayer::connect('GET', $end_point . 'test');
+        $response = DataAccessLayer::request('GET', 'test');
         return $response;
     }
 

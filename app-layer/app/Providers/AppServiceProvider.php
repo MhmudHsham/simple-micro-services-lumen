@@ -6,6 +6,15 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+
+    /**
+     * Boot new constants to be shared in whole project
+     */
+    public function boot() {
+        define("EVENTS_KEY_CONNECTION", "http://localhost/simple-micro-services-lumen/services-layer/events-service/");
+        define("EVENTS_TOKEN", '$2y$10$a7wUVW.94SWE6XdxfAj5sOep9XIctRbLlx2m7Jci8E//hgv4.Ebwm');
+    }
+
     /**
      * Register any application services.
      *
@@ -13,6 +22,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 }

@@ -17,7 +17,7 @@ class EventsCRUDController extends Controller
 
     public function getEvents()
     {
-        $response = DataAccessLayer::request('GET', 'test');
+        $response = DataAccessLayer::request(EVENTS_KEY_CONNECTION, EVENTS_TOKEN, 'GET', 'test');
         return $response;
     }
 

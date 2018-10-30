@@ -11,12 +11,17 @@ namespace App\ServicesLayer;
 class DataAccessLayer
 {
 
-    public static function request($method, $url, $options = [])
+    public static function request($end_point, $token, $method, $url, $options = [])
     {
-        $options["headers"]['TOKEN'] = EVENTS_TOKEN;
-        $client = new \GuzzleHttp\Client();
-        $res = $client->request($method, EVENTS_KEY_CONNECTION . $url, $options);
-        return $res->getBody()->getContents();
+        $options["headers"]['TOKEN'] = $token;
+        try {
+            $client = new \GuzzleHttp\Client();
+            $res = $client->request($method, $end_point . $url, $options);
+            return $res->getBody()->getContents();
+        } catch (\Exception $e) {
+            return response()->json("Unauthorized", 401);
+        }
+
     }
 
 }

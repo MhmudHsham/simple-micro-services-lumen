@@ -15,7 +15,7 @@ class PostsCRUDController extends Controller
 {
     public function getPosts()
     {
-        $response = DataAccessLayer::request('GET', 'test');
+        $response = DataAccessLayer::request(POSTS_KEY_CONNECTION, POSTS_TOKEN, 'GET', 'test');
         return $response;
     }
 

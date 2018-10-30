@@ -23,6 +23,11 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
+
+$app->middleware([
+    App\Http\Middleware\CheckTokenMiddleware::class
+]);
+
 // $app->withFacades();
 
 // $app->withEloquent();

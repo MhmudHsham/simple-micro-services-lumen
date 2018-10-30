@@ -6,16 +6,14 @@
  * Time: 6:29 PM
  */
 
-namespace App\Http\Controllers\EventsService;
+namespace App\Http\Controllers\PostsService;
 
 use App\Http\Controllers\Controller;
 use App\ServicesLayer\DataAccessLayer;
 
-class EventsCRUDController extends Controller
+class PostsCRUDController extends Controller
 {
-
-
-    public function getEvents()
+    public function getPosts()
     {
         $response = DataAccessLayer::request('GET', 'test');
         return $response;

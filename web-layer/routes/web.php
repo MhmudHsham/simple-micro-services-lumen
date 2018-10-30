@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 
-Route::get('/test', 'Events\CRUDController@index');
+Route::get('events', 'EventsController@getEvents');
+Route::get('posts', 'PostsController@getPosts');

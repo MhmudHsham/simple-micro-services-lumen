@@ -16,4 +16,5 @@ $router->get('/', function () use ($router) {
 });
 
 
-$router->get('/test', 'EventsService\EventsCRUDController@index');
+$router->get('events', 'EventsService\EventsCRUDController@getEvents');
+$router->get('posts', 'PostsService\PostsCRUDController@getPosts');

@@ -13,10 +13,10 @@ class AppLayerConnection
 {
 
 
-    public static function connect($method, $url)
+    public static function request($method, $url)
     {
         $client = new \GuzzleHttp\Client();
-        $res = $client->request($method, $url);
+        $res = $client->request($method, APP_LAYER . $url);
         return json_decode($res->getBody()->getContents());
     }
 
